@@ -14,6 +14,7 @@ steps:
         pip install --upgrade pip
         pip install codecov
         pip install -r development.txt
+        pip install pytest
         coverage run --source radish -m pytest tests/unit/
   displayName: 'Run a unittests'
 
