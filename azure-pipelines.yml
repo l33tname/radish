@@ -9,7 +9,20 @@ trigger:
 pool:
   vmImage: 'vs2017-win2016'
 
+strategy:
+  matrix:
+    Python35:
+      python.version: '3.5'
+    Python36:
+      python.version: '3.6'
+  maxParallel: 2 
+
 steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+    architecture: 'x64'
+
 - script: |
         pip install --upgrade pip
         pip install codecov
