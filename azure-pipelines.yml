@@ -31,5 +31,7 @@ steps:
         pip install --upgrade pip
         pip install -r requirements-dev.txt
         coverage run --source radish -m pytest tests/unit/
+        coverage run --source radish -m pytest tests/functional/
+        coverage run --source radish -m pytest tests/integration/
   displayName: 'Run unittests'
 
