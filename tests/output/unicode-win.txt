@@ -1,0 +1,39 @@
+['C:\\Users\\felix\\git\\radish\\tests\\features\\unicode.feature', '--marker', 'test-marker', '-b', 'C:\\Users\\felix\\git\\radish\\tests\\radish']
+[1m[37m1 features ([22m[39m[1m[32m0 passed[22m[39m[1m[37m)[22m[39m
+[1m[37m5 scenarios ([22m[39m[1m[32m0 passed[22m[39m[1m[37m)[22m[39m
+[1m[37m17 steps ([22m[39m[1m[32m0 passed[22m[39m[1m[37m)[22m[39m
+[36mRun test-marker finished within a moment[39m
+[1m[31mError[22m[39m[26m: [31mHook 'console_writer_before_each_feature' from C:\Users\felix\git\radish\radish\extensions\formatters\gherkin.py:124 raised: 'UnicodeEncodeError: 'charmap' codec can't encode character '\ufffd' in position 72: character maps to <undefined>'[39m[26m
+
+[31mTraceback (most recent call last):
+  File "C:\Users\felix\git\radish\radish\hookregistry.py", line 126, in call
+    func(model, *args, **kwargs)
+  File "C:\Users\felix\git\radish\radish\extensions\formatters\gherkin.py", line 155, in console_writer_before_each_feature
+    write(output)
+  File "C:\Users\felix\git\radish\radish\utils.py", line 56, in console_write
+    print(text)
+  File "C:\Users\felix\AppData\Local\Programs\Python\Python36\lib\tempfile.py", line 483, in func_wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\felix\AppData\Local\Programs\Python\Python36\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\ufffd' in position 72: character maps to <undefined>
+[39m[26m
+[1m[37m1 features ([22m[39m[1m[32m0 passed[22m[39m[1m[37m)[22m[39m
+[1m[37m5 scenarios ([22m[39m[1m[32m0 passed[22m[39m[1m[37m)[22m[39m
+[1m[37m17 steps ([22m[39m[1m[32m0 passed[22m[39m[1m[37m)[22m[39m
+[36mRun test-marker finished within a moment[39m
+[1m[31mError[22m[39m[26m: [31mHook 'console_writer_before_each_feature' from C:\Users\felix\git\radish\radish\extensions\formatters\gherkin.py:124 raised: 'UnicodeEncodeError: 'charmap' codec can't encode character '\ufffd' in position 72: character maps to <undefined>'[39m[26m
+
+[31mTraceback (most recent call last):
+  File "C:\Users\felix\git\radish\radish\hookregistry.py", line 126, in call
+    func(model, *args, **kwargs)
+  File "C:\Users\felix\git\radish\radish\extensions\formatters\gherkin.py", line 155, in console_writer_before_each_feature
+    write(output)
+  File "C:\Users\felix\git\radish\radish\utils.py", line 56, in console_write
+    print(text)
+  File "C:\Users\felix\AppData\Local\Programs\Python\Python36\lib\tempfile.py", line 483, in func_wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\felix\AppData\Local\Programs\Python\Python36\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\ufffd' in position 72: character maps to <undefined>
+[39m[26m

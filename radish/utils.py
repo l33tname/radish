@@ -20,7 +20,13 @@ from datetime import datetime, timedelta
 
 from .compat import PY2, u
 
-non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd)
+if os.name == 'nt':
+    try:
+        # python 3
+        sys.stdout = codecs.getwriter('utf8')(sys.stdout.buffer)
+    except:
+        # python 2
+        sys.stdout = codecs.getwriter('utf8')(sys.stdout)
 
 
 class Failure(object):  # pylint: disable=too-few-public-methods
@@ -51,9 +57,6 @@ def console_write(text):
     """
     if (PY2 and isinstance(text, unicode)):
         text = text.encode("utf-8")
-
-    if os.name == 'nt':
-        text = text.translate(non_bmp_map)
 
     print(text)
 
