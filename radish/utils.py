@@ -20,14 +20,6 @@ from datetime import datetime, timedelta
 
 from .compat import PY2, u
 
-if os.name == 'nt':
-    try:
-        # python 3
-        sys.stdout = codecs.getwriter('utf8')(sys.stdout.buffer)
-    except:
-        # python 2
-        sys.stdout = codecs.getwriter('utf8')(sys.stdout)
-
 
 class Failure(object):  # pylint: disable=too-few-public-methods
     """
@@ -57,6 +49,9 @@ def console_write(text):
     """
     if (PY2 and isinstance(text, unicode)):
         text = text.encode("utf-8")
+
+    if os.name == 'nt':
+        text = text.encode('cp1252', errors='replace').decode('cp1252')
 
     print(text)
 
