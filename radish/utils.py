@@ -20,6 +20,8 @@ from datetime import datetime, timedelta
 
 from .compat import PY2, u
 
+non_bmp_map = dict.fromkeys(range(0x10000, sys.maxunicode + 1), 0xfffd)
+
 
 class Failure(object):  # pylint: disable=too-few-public-methods
     """
@@ -47,8 +49,11 @@ def console_write(text):
 
         If the --no-colors flag is given all colors are removed from the text
     """
-    if PY2 and isinstance(text, unicode):
+    if (PY2 and isinstance(text, unicode)):
         text = text.encode("utf-8")
+
+    if os.name == 'nt':
+        text = text.translate(non_bmp_map)
 
     print(text)
 
