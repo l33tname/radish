@@ -357,9 +357,5 @@ def test_main_cli_calls(
         rel_featurefile = os.path.relpath(featurefile, feature_parent_dir)
         actual_output = actual_output.replace(featurefile, rel_featurefile)
     # then
-    #if actual_output != expected_output_string:
-    #    expected_output_file_win = os.path.join(outputdir, expected_output + "-win.txt")
-    #    with open(expected_output_file_win, 'w', encoding="utf8") as file_win:
-    #        file_win.write(actual_output)
     assert actual_output == expected_output_string
     assert actual_exitcode == expected_exitcode

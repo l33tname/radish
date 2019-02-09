@@ -1,4 +1,0 @@
-[console_scripts]
-radish = radish.main:main
-radish-test = radish.testing.__main__:main [testing]
-
